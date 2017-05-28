@@ -1,0 +1,10 @@
+<p>Olá, {{user.name}}!</p>
+<p>Este e-mail foi enviado porque recebemos uma solicitação para resetar sua senha em nosso sistema.
+   Por favor, clique no link abaixo para iniciar o processo de cadastrar uma nova senha ou copie e cole-o na barra de endereço de seu navegador:</p>
+<p><a href="{{ url }}">{{ url }}</a></p>
+<p>
+    Se você não solicitou resetar sua senha em nosso sistema, contate-nos através do e-mail
+    <a href="mailto:{{ email }}">{{ email }}</a> 
+    e desconsidere este e-mail.
+</p>
+<p style="font-size: small">Este é um e-mail automático. Não o responda.</p>

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h4>Estamos quase terminando!</h4>
+                <p>Enviamos um e-mail para <b>{{ user.email }}</b> a fim de confirmar seu cadastro no sistema. 
+                    Por favor, verifique sua caixa de entrada para informações sobre como proceder para finalizar seu cadastro.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

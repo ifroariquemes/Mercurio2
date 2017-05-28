@@ -1,0 +1,33 @@
+{
+  "name": "Mercurio",
+  "description": "Gerenciador de eventos",
+  "main": "app.php",
+  "keywords": [
+    "eventos"
+  ],
+  "authors": [
+    "Natanael Simoes"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ifroariquemes/Mercurio",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "datatables": "^1.10.13",
+    "datatables-plugins": "^1.10.13",
+    "Flot": "flot#^0.8.3",
+    "font-awesome": "^4.7.0",
+    "holderjs": "^2.9.4",
+    "morris.js": "morrisjs#^0.5.1",
+    "datatables-responsive": "^2.1.1",
+    "bootstrap-social": "^5.1.1",
+    "bootstrap-theme-cosmo": "^3.1.1"
+  }
+}

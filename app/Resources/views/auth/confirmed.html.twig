@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Usuário confirmado!</div>
+                    <div class="panel-body">
+                        <p>Paranbéns! Agora você está pronto para usar nossos serviços.</p>
+                        <p>Por favor, siga para o login para continuar.</p>
+                        <div class="col-md-12" style="margin-top:25px;">
+                            <p class="text-center">
+                                <a class="btn btn-success" href="{{ return }}"><i class="glyphicon glyphicon-user"></i> Ir para login</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

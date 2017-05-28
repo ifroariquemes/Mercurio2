@@ -1,0 +1,11 @@
+{% extends 'templates/singleform.html.twig' %}
+
+{% block form_title %}Nova senha cadastrada com sucesso!{% endblock %}
+{% block form_body %}
+    <p>Pronto, sua senha foi renovada! Agora vamos voltar para a página de login para que você possa utilizar nossos serviços novamente.</p>
+    <div class="col-md-12" style="margin-top:25px;">
+        <p class="text-center">
+            <a class="btn btn-success" href="{{ path('auth_login') }}"><i class="fa fa-user"></i> Ir para login</a>
+        </p>
+    </div>
+{% endblock %}

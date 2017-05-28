@@ -1,0 +1,29 @@
+{% extends 'templates/singleform.html.twig' %}
+
+{% block form_title %}Cadastrar nova senha{% endblock %}
+{% block form_body %}
+    {{ form_start(form) }}
+    <div class="form_group">
+        <div class="col-md-8 col-md-offset-2">
+            <b>E-mail:</b> {{ user.email }}
+        </div>
+    </div>
+    <div class="form_group">
+        <div class="col-md-8 col-md-offset-2">
+            {{ form_row(form.plainPassword.first, {'attr': {'class': 'form-control', 'autofocus': true}}) }}
+        </div>
+    </div>
+    <div class="form_group">
+        <div class="col-md-8 col-md-offset-2">
+            {{ form_row(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12" style="margin-top:25px;">
+            <p class="text-center">
+                <button type="submit" class="btn btn-success">Salvar nova senha</button>
+            </p>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

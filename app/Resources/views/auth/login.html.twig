@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="row" style="margin-top: 60px">
+        <div class="col-md-offset-4 col-md-4">
+            <form action="{{ path('auth_login') }}" method="post">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <p><img src="{{ asset('images/ifro-horizontal.png') }}" class="img-responsive"><p>
+                    </div>
+                </div>
+                <p class="text-danger">
+                    {% if error %}
+                        {{ error.messageKey|trans(error.messageData) }}
+                    {% endif %}
+                </p>
+                <div class="form-group">                        
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="_username" value="{{ last_username }}" class="form-control" autofocus>
+                </div>
+                <div class="form-group">                        
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="_password" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="remember_me" name="_remember_me">
+                    <label for="remember_me">Continuar conectado</label>
+                </div>
+                <input type="hidden" name="_target_path" value="/">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <p class="text-center">
+                    <button type="submit" class="btn btn-primary"><span class="fa fa-sign-in"></span> Entrar</button><br>
+                </p>                     
+                <div class="text-center"><a href="{{ path("auth_forgot") }}">Esqueceu sua senha?</a></div>
+            </form>
+            <h4 class="text-center" style="margin-top: 30px">Não possui uma conta?</h4>                    
+            <p class="text-center">
+                <a class="btn btn-success" href="{{ path('auth_register') }}">
+                    <span class="fa fa-user"></span> Registrar nova conta
+                </a>                  
+            </p>
+            <p class="text-center"><a href="{{ path('auth_resend') }}" title="Se você não recebeu um e-mail contendo os dados para confirmação de sua conta, clique aqui para solicitar um reenvio.">Solicitar novo link de confirmação.</a></p>  
+        </div> 
+        
+    </div>          
+{% endblock %}

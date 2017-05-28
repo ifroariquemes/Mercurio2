@@ -1,0 +1,24 @@
+{% extends 'templates/singleform.html.twig' %}
+
+{% block form_title %}Reenviar link de confirmação{% endblock %}
+{% block form_body %}
+    {{ form_start(form) }}
+    <div class="form_group">
+        <div class="col-md-8 col-md-offset-2">
+            {{ form_row(form.email, {'attr': {'class': 'form-control', 'autofocus': true}}) }}
+        </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        {% if message is not null %}<p class="text-danger">{{ message }} </p>{% endif %}
+        <p>Se você ainda não recebeu e-mail com o link de confirmação, por favor, verifique sua caixa de spam.</p>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12" style="margin-top:25px;">
+            <p class="text-center">
+                <a href="{{ path('auth_login')}}" class="btn btn-danger">Cancelar</a>
+                <button type="submit" class="btn btn-success">Reenviar</button>
+            </p>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

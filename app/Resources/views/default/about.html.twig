@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h1>Mercúrio</h1>
+            <h4>Sistema Gerenciador de Eventos</h4>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <p><img src="{{ asset('images/ifro-horizontal.png') }}" class="img-responsive"><p>
+                </div>
+            </div>
+            <p>Este sistema é desenvolvido pelo Instituto Federal de Rondônia, Campus Ariquemes, criado com o ituito de auxiliar
+                no processo de organização de eventos acadêmicos no âmbito do Instituto Federal. Realiza controle de inscrições em atividades,
+                vagas, emissão de certificados para participantes e ministrantes e muito mais.</p>
+            <p>Para maiores informações, acesse o <a href="https://github.com/ifroariquemes/Mercurio" target="_blank">repositório oficial</a>
+                do projeto e fique por dentro das novidades e correções.</p>
+            <p><b>Contato:</b> Natanael Simões &lt;<a href="mailto:natanael.simoes@ifro.edu.br">natanael.simoes@ifro.edu.br</a>&gt;</p>
+            <a href="{{ path('dashboard') }}" class="btn btn-default">Voltar para o início</a>
+        </div>
+    </div>
+{% endblock %}

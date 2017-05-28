@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Usuários <a href="{{ path('user_new') }}" class="btn btn-primary"><span class="fa fa-plus-circle"></span> Novo</a></h1>
+        </div>
+        <div class="col-md-4">
+            <form>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="pesquisar...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><span class="fa fa-search"></span> <span class="sr-only">pesquisar</span></button> 
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-responsive table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td><a href="{{ path('user_edit', {'id': user.id }) }}">{{ user.name }}</a></td>
+                            <td>{{ user.email }}</td>
+                            <td><a class="btn-sm btn-default pull-right" href="{{ path('user_edit', {'id': user.id }) }}"><span class="fa fa-edit"></span> <span class="sr-only">editar</span></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% if maxPages > 1 %}
+                <ul class="pagination pagination-sm">
+                    <li {{ page == 1 ? 'class="disabled"' }}>
+                        <a href="{{ path('user_list', {page: page-1 < 1 ? 1 : page-1}) }}">«</a>
+                    </li>
+                    {% for i in 1..maxPages %}
+                        <li {{ page == i ? 'class="active"' }}>
+                            <a href="{{ path('user_list', {page: i}) }}">{{ i }}</a>
+                        </li>
+                    {% endfor %}
+                    <li {{ page == maxPages ? 'class="disabled"' }}>
+                        <a href="{{ path('user_list', {page: page+1 <= maxPages ? page+1 : page}) }}">»</a>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

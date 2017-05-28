@@ -1,0 +1,12 @@
+{% extends 'templates/singleform.html.twig' %}
+
+{% block form_title %}Usuário salvo com sucesso!{% endblock %}
+{% block form_body %}
+    <p>Os dados do usuário foram salvos com sucesso.</p>
+    <div class="col-md-12" style="margin-top:25px;">
+        <p class="text-center">
+            <a class="btn btn-default" href="{{ path('dashboard') }}"><span class="fa fa-home"></span> Início</a>
+            <a class="btn btn-default" href="{{ path('user_list') }}"><span class="fa fa-user"></span> Usuários</a>
+        </p>
+    </div>
+{% endblock %}
